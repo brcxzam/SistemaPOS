@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iniciar Sesión</title>
+    <!--    Hojas de estilos    -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!--    Icono               -->
+    <link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
+    <!--    Fuentes de texto    -->
+    <link rel="stylesheet" href="fonts/pacifico-rubik.min.css">
+    <!--    Fuentes de iconos   -->
+    <link rel="stylesheet" href="fonts/fontawesome-free-5.6.3-web/css/all.min.css">
+</head>
+
+<body class="text-center">
+    <!--    Formulario de inicio de sesión      -->
+    <div class="form-signin animated pulse">
+        <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesión</h1>
+        <form id="login">
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+            <label for="inputPassword" class="sr-only">Contraseña</label>
+            <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+            <button type="submit" class="btn btn-lg btn-block">
+                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+            </button>
+        </form>
+        <!--    Mensaje de alerta       -->
+        <span id="mensaje" class="my-3"></span>
+        <p class="text-muted">BRCxZAM</p>
+    </div>
+    <!--    Scripts             -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/animated.min.js"></script>
+    <!--    Back-end            -->
+    <script src="js/login.js"></script>
+</body>
+
+</html>

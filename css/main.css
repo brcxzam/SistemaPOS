@@ -1,0 +1,139 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+  color: whitesmoke;
+  padding-top: 75px;
+  background: url("../img/wallhaven-718046-blur.jpg") 50% 50% no-repeat;
+  background-attachment: fixed;
+}
+/*  Botones  */
+.btn {
+  background-color: rgba(255, 255, 255, 0.9)!important;
+  color: #6c757d!important;
+  border: none;
+}
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.5)!important;
+  color: whitesmoke!important;
+}
+.create:hover {
+  background-color: #28a745!important;
+  color: whitesmoke!important
+}
+.update:hover {
+  background-color: #17a2b8!important;
+  color: whitesmoke!important;
+}
+.delete:hover {
+  background-color: #FF1E54!important;
+  color: whitesmoke!important;
+}
+/*  Modal   */
+.modal-content {
+  background: rgba(255, 255, 255, 0.9);
+  color: black!important;
+}
+.modal-content .btn {
+  color: black!important;
+}
+/*  Formularios   */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.form-control:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: whitesmoke;
+}
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.form-control-plaintext {
+  color: whitesmoke;
+  font-size: 18px;
+}
+.total {
+  font-size: 18px;
+}
+/*  Barra de navegación */
+.navbar {
+  background:rgba(0, 0, 0, 0.3);
+  font-family: 'Rubik', sans-serif;
+  color: whitesmoke;
+}
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+}
+/*  Pie de pagina */
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 5%;
+  /* Set the fixed height of the footer here */
+  line-height: 35px;
+  /* Vertically center the text there */
+  background: rgba(0, 0, 0, 0.3);
+
+}
+/*  Scroll    */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:rgba(0, 0, 0, 0.3); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+/* tabla */
+.table-cont{
+  /**make table can scroll**/
+  max-height: 85%;
+  overflow: auto;
+  /** add some style**/
+}
+thead{
+  background-color: whitesmoke;
+  color: #6c757d;
+  z-index: 1 !important;
+}
+tbody{
+  z-index: 0 !important;
+}
+/* Modal cambio */
+#cambio {
+  font-family: 'Pacifico', cursive;
+  font-size: 350%;
+  color: #17a2b8!important;
+}
+/* Mensajes */
+#mensaje {
+  font-family: 'Pacifico', cursive;
+  font-size: 150%;
+}
+/*  Contenido   */
+.contenido {
+  /* display: block; */
+  max-height: 90%;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+/*  Titulo  */
+h1 {
+  color: whitesmoke;
+  text-shadow: 2px 0 0 #6c757d, -2px 0 0 #6c757d, 0 2px 0 #6c757d, 0 -2px 0 #6c757d, 1px 1px #6c757d, -1px -1px 0 #6c757d, 1px -1px 0 #6c757d, -1px 1px 0 #6c757d;
+}

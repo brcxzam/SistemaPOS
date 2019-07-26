@@ -1,2 +1,1 @@
-# SistemaPOS
- Sistema de punto de ventas
+sistema-pos

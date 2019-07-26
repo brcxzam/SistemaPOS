@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Categorias</title>
+    <!--    Hojas de estilos    -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--    Icono               -->
+    <link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
+    <!--    Fuentes de texto    -->
+    <link rel="stylesheet" href="fonts/pacifico-rubik.min.css">
+    <!--    Fuentes de iconos   -->
+    <link rel="stylesheet" href="fonts/fontawesome-free-5.6.3-web/css/all.min.css">
+</head>
+
+<body>
+    <!--    Barra de navegacion -->
+    <div id="barraNavegacion"></div>
+    <!--    Encabezado      -->
+    <div class="container">
+        <h1 class="text-capitalize font-weight-bold">Categorias Registradas</h1>
+    </div>
+    <!--    Tabla de categorias    -->
+    <div class="container animated pulse table-cont">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col" class="text-center">
+                        <button class="btn create" type="button" id="nuevo">
+                            <i class="fas fa-plus-circle"></i> Nuevo
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="outputCategorias"></tbody>
+        </table>
+    </div>
+    <!--    Modal nuevo/editar-->
+    <div class="modal fade" id="nuevo-editar" tabindex="-1" role="dialog" aria-labelledby="nuevo-editarTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nuevo-editarTitle">Nuevo Producto</h5>
+                </div>
+                <form id="form">
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputCategoria">Categoria</label>
+                                <input type="text" class="form-control" name="categoria" id="inputCategoria"
+                                    placeholder="Producto" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputDescripcion">Descripción</label>
+                                <textarea class="form-control" name="descripcion" id="inputDescripcion" cols="30" rows="5"
+                                    placeholder="Descripción" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="mensaje" class="mx-3"></span>
+                        <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn create" id="guardarProveedor">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--    Modal elimina   -->
+    <div class="modal fade" id="eliminarRegistro" tabindex="-1" role="dialog" aria-labelledby="eliminarLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eliminarLabel">Eliminar</h5>
+                </div>
+                <div class="modal-bod text-center">
+                    <p>¿Esta seguro de eliminar?</p>
+                    <p id="eliminar"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn delete" id="elimina">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    Pie de pagina       -->
+    <div id="piePagina"></div>
+    <!--    Scripts             -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/animated.min.js"></script>
+    <script src="js/main.js"></script>
+    <!--    Back-end            -->
+    <script src="js/categorias.js"></script>
+</body>
+
+</html>

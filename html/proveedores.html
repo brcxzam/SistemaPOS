@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proveedores</title>
+    <!--    Hojas de estilos    -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--    Icono               -->
+    <link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
+    <!--    Fuentes de texto    -->
+    <link rel="stylesheet" href="fonts/pacifico-rubik.min.css">
+    <!--    Fuentes de iconos   -->
+    <link rel="stylesheet" href="fonts/fontawesome-free-5.6.3-web/css/all.min.css">
+</head>
+
+<body>
+    <!--    Barra de navegacion -->
+    <div id="barraNavegacion"></div>
+    <!--    Nuevo proveedor       -->
+    <div class="container">
+        <h1 class="text-capitalize font-weight-bold titulo float-left">Proveedores Registrados</h1>
+        <button type="button" class="btn create float-right" id="nuevo">
+            <i class="fas fa-plus-circle"></i> Nuevo
+        </button>
+    </div>
+    <!--    Tabla de proveedores   -->
+    <div id="outputProveedores" class="container animated pulse contenido"></div>
+    <!--    Modal nuevo/editar proveedor    -->
+    <div class="modal fade" id="proveedor" tabindex="-1" role="dialog" aria-labelledby="proveedorTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <form id="formProveedor">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="proveedorTitle"></h5>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputProveedor">Proveedor</label>
+                                <input type="text" class="form-control" name="proveedor" id="inputProveedor"
+                                    placeholder="Proveedor" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputContacto">Contacto</label>
+                                <input type="text" class="form-control" name="contacto" id="inputContacto" placeholder="Contacto"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputTelefono">Telefono</label>
+                                <input type="tel" class="form-control" name="telefono" id="inputTelefono" placeholder="Telefono"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="inputDireccion">Dirección</label>
+                                <input type="text" class="form-control" name="direccion" id="inputDireccion"
+                                    placeholder="Dirección" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputCodigoP">Codigo Postal</label>
+                                <input type="number" class="form-control" name="codigo_postal" id="inputCodigoP"
+                                    placeholder="Código Postal" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputColonia">Colonia</label>
+                                <input type="text" class="form-control" name="colonia" id="inputColonia" placeholder="Colonia"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputMunicipio">Municipio</label>
+                                <input type="text" class="form-control" name="municipio" id="inputMunicipio"
+                                    placeholder="Municipio" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputEstado">Estado</label>
+                                <input type="text" class="form-control" name="estado" id="inputEstado" placeholder="Estado"
+                                    required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputPais">País</label>
+                                <input type="text" class="form-control" name="pais" id="inputPais" placeholder="País"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <span id="mensaje" class="mx-3"></span>
+                        <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn create" id="guardarProveedor">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--    Modal elimina proveedor -->
+    <div class="modal fade" id="eliminarProveedor" tabindex="-1" role="dialog" aria-labelledby="eliminarProveedorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eliminarProveedorLabel">Eliminar Usuario</h5>
+                </div>
+                <div class="modal-bod text-center">
+                    <p>¿Esta seguro de eliminar al proveedor?<b>
+                            <p id="proveedorEliminar"></p>
+                        </b></p>
+                    <p>La información relacionada al proveedor tambien sera eliminada.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn delete" onclick="deleteProveedor()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    Pie de pagina       -->
+    <div id="piePagina"></div>
+    <!--    Scripts             -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/animated.min.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <!--    Back-end            -->
+    <script src="js/proveedores.js"></script>
+</body>
+
+</html>

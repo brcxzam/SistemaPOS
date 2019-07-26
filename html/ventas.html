@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Ventas</title>
+	<!--    Hojas de estilos    -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/datepicker.css">
+	<!--    Icono               -->
+	<link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
+	<!--    Fuentes de texto    -->
+	<link rel="stylesheet" href="fonts/pacifico-rubik.min.css">
+	<!--    Fuentes de iconos   -->
+	<link rel="stylesheet" href="fonts/fontawesome-free-5.6.3-web/css/all.min.css">
+</head>
+
+<body>
+	<!--    Barra de navegacion -->
+	<div id="barraNavegacion"></div>
+	<!--    Ventas Registradas       -->
+	<div class="container">
+		<h1 class="text-capitalize font-weight-bold">Ventas Registradas</h1>
+	</div>
+	<!--	Grafica de ventas 			-->
+	<div class="container">
+		<form id="form">
+			<div class="form-row align-items-center">
+				<div class="col-2">
+				</div>
+				<div class="form-group col-4">
+					<input type="text" data-range="true" data-multiple-dates-separator="<->" data-language="es" class="datepicker-here form-control"
+					 id="date" required placeholder="Fechas de visualización" />
+				</div>
+				<div class="form-group col-2">
+					<button type="submit" class="btn btn-block" id="dates">Aplicar</button>
+				</div>
+				<div class="form-group col-2">
+					<select id="tipo" class="form-control">
+						<option value="total">Ingresos</option>
+						<option value="COUNT(*)">Ventas</option>
+					</select>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="container p-5">
+		<canvas id="graph" width="400" height="270" aria-label="graph" role="img"></canvas>
+	</div>
+	<!--    Tabla de productos    -->
+	<div class="container animated pulse table-cont" id="table-cont">
+		<table class="table table-fixed">
+			<thead>
+				<tr>
+					<th scope="col">Usuario</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Total</th>
+					<th scope="col">Efectivo</th>
+					<th scope="col">Cambio</th>
+					<th scope="col" width=5%></th>
+				</tr>
+			</thead>
+			<tbody id="outputVentas">
+			</tbody>
+		</table>
+	</div>
+	<!--    Pie de pagina       -->
+	<div id="piePagina"></div>
+	<!--    Scripts             -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/animated.min.js"></script>
+	<script src="js/main.js"></script>
+	<!--    Back-end            -->
+	<script src="js/ventas.js"></script>
+	<script src="js/Chart.min.js"></script>
+	<script src="js/grafica.js"></script>
+	<script src="js/datepicker.js"></script>
+</body>
+
+</html>
